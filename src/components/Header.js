@@ -1,3 +1,6 @@
+import React from "react"
+import { NavLink } from "react-router-dom"
+
 const Header = () => (
     <div>
         Expense Tracker
@@ -8,6 +11,6 @@ const Header = () => (
             <NavLink activeClassName="nav__link--active" to="/help">Help</NavLink>
         </p>
     </div>
-);
+)
 
-export default Header;
+export default Header

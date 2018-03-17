@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const EditExpensePage = () => (
     <div>Edit</div>
-);
+)
 
-export default EditExpensePage;
+export default EditExpensePage

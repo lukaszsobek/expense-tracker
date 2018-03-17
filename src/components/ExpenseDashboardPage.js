@@ -1,9 +1,9 @@
-import React from "react";
+import React from "react"
 
 const ExpenseDashboardPage = () => (
     <div>
         Dashboard
     </div>
-);
+)
 
-export default ExpenseDashboardPage;
+export default ExpenseDashboardPage

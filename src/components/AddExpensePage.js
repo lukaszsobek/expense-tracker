@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const AddExpensePage = () => (
     <div>Add</div>
-);
+)
 
-export default AddExpensePage;
+export default AddExpensePage
