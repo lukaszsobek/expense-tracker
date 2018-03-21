@@ -50,7 +50,6 @@ const addedItem = store.dispatch(addExpense({
 //         description: "not-lalala"
 //      }
 // ))
-store.dispatch(setTextFilter("la"))
 // store.dispatch(sortByAmount())
 // store.dispatch(sortByDate())
 // store.dispatch(setStartDateFilter(125))

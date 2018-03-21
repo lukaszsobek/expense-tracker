@@ -12,16 +12,10 @@ const filtersReducer = (state = filtersReducerInitialState,action) => {
                 ...state,
                 text: action.text
             }
-        case "SORT_BY_DATE":
+        case "SORT_BY":
             return {
                 ...state,
-                sortBy: "date"
-            }
-
-        case "SORT_BY_AMOUNT":
-            return {
-                ...state,
-                sortBy: "amount"
+                sortBy: action.value
             }
 
         case "SET_START_DATE_FILTER":

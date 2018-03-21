@@ -6,9 +6,7 @@ import setEndDateFilter from "./filters/setEndDateFilter"
 import setStartDateFilter from "./filters/setStartDateFilter"
 import setTextFilter from "./filters/setTextFilter"
 
-import sortByAmount from "./sort/sortByAmount"
-import sortByDate from "./sort/sortByDate"
-
+import sortBy from "./sort/sortBy"
 
 export {
     addExpense,
@@ -19,6 +17,5 @@ export {
     setStartDateFilter,
     setTextFilter,
 
-    sortByAmount,
-    sortByDate
+    sortBy
 }
