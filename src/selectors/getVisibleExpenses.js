@@ -1,7 +1,6 @@
-const getVisibleExpenses = (
-    expenses,
-    { text, sortBy, startDate, endDate }
-) => {
+const getVisibleExpenses = (expenses, filters) => {
+    const { text, sortBy, startDate, endDate } = filters
+
     return expenses.filter(({
         description, note, createdAt
     }) => {

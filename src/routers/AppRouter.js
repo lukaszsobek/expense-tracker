@@ -18,7 +18,7 @@ import {
 
 
 
-const AppRouter = (
+const AppRouter = () => (
 	<BrowserRouter>
 		<div>
 			<Header />
