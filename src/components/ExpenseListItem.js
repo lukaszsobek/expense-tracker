@@ -1,9 +1,16 @@
 import React from "react"
 
-const ExpenseListItem = ({ description, amount, createdAt }) => {
+const ExpenseListItem = ({
+        deleteItem, id, description, amount, createdAt
+    }) => {
     return (
         <div>
-         {description} - {amount} - {createdAt}
+            <div>
+            {description} - {amount} - {createdAt}
+            </div>
+            <button
+                onClick={() => deleteItem({id})}
+            >Remove</button>
         </div>
     )
 }

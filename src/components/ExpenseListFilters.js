@@ -12,7 +12,7 @@ const ExpenseListFilters = ({
                 value={textFilter}
                 onChange={(e) => {
                     updateTextFilter(e.target.value)
-                    console.log(e.target.value)}
+                    }
                 }
             />
         </div>

@@ -3,35 +3,28 @@ import { connect } from "react-redux"
 
 import ExpenseListItem from "./ExpenseListItem"
 import { getVisibleExpenses} from "../selectors"
+import { removeExpense } from "../actions"
 
 
-const ExpenseList = props => {
-    return(
-        <div>
-            {props.expenses.map(expense => (
-                <ExpenseListItem
-                key={expense.id}
-                description={expense.description}
-                amount={expense.amount}
-                createdAt={expense.createdAt}
-                />
-            ))}
-        </div>
-    )
-}
-
-const mapStateToProps = state => {
-    return {
-            expenses: getVisibleExpenses(state.expenses, state.filters)
-        }
-
-}
+const ExpenseList = ({ expenses, deleteItem }) => (
+    <div>
+        {expenses.map(expense => (
+            <ExpenseListItem
+            key={expense.id}
+            deleteItem={deleteItem}
+            {...expense}
+            />
+        ))}
+    </div>
+)
 
 
-// old
-// const mapStateToProps = state => ({
-//     expenses: state.expenses,
-//     filters: state.filters
-// })
+const mapStateToProps = state => ({
+    expenses: getVisibleExpenses(state.expenses, state.filters)
+})
 
-export default connect(mapStateToProps)(ExpenseList)
+const mapDispatchToProps = dispatch => ({
+    deleteItem: (item) => dispatch(removeExpense(item))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ExpenseList)
