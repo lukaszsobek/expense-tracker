@@ -1,11 +1,30 @@
 import React from "react"
+import { connect } from "react-redux"
+import moment from "moment"
+import "react-dates/initialize"
+import { SingleDatePicker } from "react-dates"
+import "react-dates/lib/css/_datepicker.css"
+
+import { addExpense } from "../actions/expenses/addExpense"
+
+const ErrorMessage = ({ errorMessage }) => (
+    errorMessage
+        ? <div className="error-message">Missing description or amount</div>
+        : null
+)
 
 class ExpenseForm extends React.Component {
-    state = {
+
+    initialState = {
         description: "",
         note: "",
-        amount: ""
+        amount: "",
+        createdAt: moment(),
+        isDateFocused: false,
+        errorState: false
     }
+
+    state = {...this.initialState}
 
     onDescriptionChange = e => {
         const description = e.target.value
@@ -14,9 +33,18 @@ class ExpenseForm extends React.Component {
 
     onAmountChange = e => {
         const amount = e.target.value
-        if(amount.match(/^\d*(\.\d{0,2})?$/)) {
+        if(!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
             this.setState(() => ({ amount }))
         }
+    }
+
+    onDateChange = createdAt => {
+
+        this.setState(() => ({ createdAt }))
+    }
+
+    onFocusChange = ({ focused }) => {
+        this.setState(() => ({ isDateFocused: focused }))
     }
 
     onNoteChange = e => {
@@ -24,10 +52,29 @@ class ExpenseForm extends React.Component {
         this.setState(() => ({ note }))
     }
 
+    onSubmitForm = e => {
+        e.preventDefault()
+        const { amount, description, createdAt, note } = this.state
+        const { onSubmit } = this.props
+
+        if(!description || !amount) {
+             this.setState(() => ({ errorState: true })) 
+        } else {
+            this.setState({...this.initialState})
+            onSubmit({
+                amount: parseFloat(amount, 10) * 100,
+                description,
+                createdAt: createdAt.valueOf(),
+                note
+            })
+        }
+    }
+
   render() {
       return (
         <div>
-            <form>
+            <ErrorMessage errorMessage={this.state.errorState} />
+            <form onSubmit={this.onSubmitForm}>
                 <input type="test" 
                     placeholder="Description..."
                     value={this.state.description}
@@ -42,6 +89,15 @@ class ExpenseForm extends React.Component {
                     onChange={this.onAmountChange}
                     />
 
+                <SingleDatePicker
+                    date={this.state.createdAt}
+                    onDateChange={this.onDateChange}
+                    focused={this.state.isDateFocused}
+                    onFocusChange={this.onFocusChange}
+                    numberOfMonths={1}
+                    isOutsideRange={() => false}
+                    />
+
                 <textarea
                     placeholder="Add a note to your expense"
                     value={this.state.note}
@@ -54,5 +110,7 @@ class ExpenseForm extends React.Component {
       )
   }  
 }
+
+
 
 export default ExpenseForm
