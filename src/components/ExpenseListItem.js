@@ -1,13 +1,17 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 const ExpenseListItem = ({
-        deleteItem, id, description, amount, createdAt
+        deleteItem, id, description, history, amount, createdAt
     }) => {
     return (
         <div>
             <div>
-            {description} - {amount} - {createdAt}
+            <Link to={`/edit/${id}`}>{description}</Link>
+             - {amount}
+            - {createdAt}
             </div>
+
             <button
                 onClick={() => deleteItem({id})}
             >Remove</button>

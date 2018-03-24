@@ -15,16 +15,33 @@ const ErrorMessage = ({ errorMessage }) => (
 
 class ExpenseForm extends React.Component {
 
-    initialState = {
-        description: "",
-        note: "",
-        amount: "",
-        createdAt: moment(),
-        isDateFocused: false,
-        errorState: false
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            ...this.getInitialState()
+        }
+
     }
 
-    state = {...this.initialState}
+    getInitialState = () => {
+        const editedExpense = this.props.editedExpense
+        return {
+            description: !!editedExpense
+                ? editedExpense.description
+                : "",
+            note: !!editedExpense
+                ? editedExpense.note
+                : "",
+            amount: !!editedExpense
+                ? (editedExpense.amount / 100).toString()
+                : "",
+            createdAt: !!editedExpense
+                ? moment(editedExpense.createdAt) : moment(),
+            isDateFocused: false,
+            errorState: false
+        }
+    }
 
     onDescriptionChange = e => {
         const description = e.target.value
@@ -60,7 +77,7 @@ class ExpenseForm extends React.Component {
         if(!description || !amount) {
              this.setState(() => ({ errorState: true })) 
         } else {
-            this.setState({...this.initialState})
+            this.setState({...this.getInitialState()})
             onSubmit({
                 amount: parseFloat(amount, 10) * 100,
                 description,

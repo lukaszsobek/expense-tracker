@@ -25,9 +25,6 @@ const expensesReducer = (state = expensesReducerInitialState, action) => {
                 }
             })
 
-            console.log(state, action)
-            return state
-
         default:
             return state
     }
