@@ -4,12 +4,13 @@ import ExpenseForm from "./ExpenseForm"
 
 import { addExpense } from "../actions"
 
-const AddExpensePage = ({ dispatch }) => (
+const AddExpensePage = ({ dispatch, history }) => (
     <div>
     <h1>Add expense</h1>
     <ExpenseForm
         onSubmit={(expense) => {
             dispatch(addExpense(expense))
+            history.push("/")
         }}
     />
     </div>

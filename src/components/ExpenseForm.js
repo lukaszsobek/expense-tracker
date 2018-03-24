@@ -18,15 +18,8 @@ class ExpenseForm extends React.Component {
     constructor(props) {
         super(props)
 
+        const editedExpense = props.editedExpense
         this.state = {
-            ...this.getInitialState()
-        }
-
-    }
-
-    getInitialState = () => {
-        const editedExpense = this.props.editedExpense
-        return {
             description: !!editedExpense
                 ? editedExpense.description
                 : "",
@@ -75,16 +68,15 @@ class ExpenseForm extends React.Component {
         const { onSubmit } = this.props
 
         if(!description || !amount) {
-             this.setState(() => ({ errorState: true })) 
-        } else {
-            this.setState({...this.getInitialState()})
-            onSubmit({
-                amount: parseFloat(amount, 10) * 100,
-                description,
-                createdAt: createdAt.valueOf(),
-                note
-            })
+             return this.setState(() => ({ errorState: true })) 
         }
+
+        onSubmit({
+            amount: parseFloat(amount, 10) * 100,
+            description,
+            createdAt: createdAt.valueOf(),
+            note
+        })
     }
 
   render() {
@@ -127,7 +119,5 @@ class ExpenseForm extends React.Component {
       )
   }  
 }
-
-
 
 export default ExpenseForm
