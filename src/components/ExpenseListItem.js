@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 const ExpenseListItem = ({
-        deleteItem, id, description, history, amount, createdAt
+        id, description, history, amount, createdAt
     }) => {
     return (
         <div>
@@ -11,10 +11,6 @@ const ExpenseListItem = ({
              - {amount}
             - {createdAt}
             </div>
-
-            <button
-                onClick={() => deleteItem({id})}
-            >Remove</button>
         </div>
     )
 }

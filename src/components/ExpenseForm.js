@@ -14,7 +14,6 @@ const ErrorMessage = ({ errorMessage }) => (
 )
 
 class ExpenseForm extends React.Component {
-
     constructor(props) {
         super(props)
 
@@ -113,7 +112,11 @@ class ExpenseForm extends React.Component {
                     onChange={this.onNoteChange}
                     ></textarea>
 
-                <button>Add Expense</button>
+                <button>{
+                    !!this.props.editedExpense
+                        ? "Edit expense"
+                        : "Add Expense"
+                }</button>
             </form>
         </div>
       )
