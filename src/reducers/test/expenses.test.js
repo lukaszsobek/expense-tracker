@@ -21,7 +21,14 @@ describe("expenseReducer handles",() => {
         expect(expensesReducer(state,action)).toEqual([expense])
     })
 
-    it("REMOVE_EXPENSE", () => {
+    it("REMOVE_EXPENSE when no match", () => {
+        const state = [{id:1},{id:2},{id:3}]
+        const id = 8
+        const action = { type: "REMOVE_EXPENSE", id }
+        expect(expensesReducer(state,action)).toEqual(state)
+    })
+
+    it("REMOVE_EXPENSE when match", () => {
         const state = [{id:1},{id:2},{id:3}]
         const id = 2
         const action = { type: "REMOVE_EXPENSE", id }

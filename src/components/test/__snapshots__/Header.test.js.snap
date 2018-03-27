@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders header 1`] = `
+<div>
+  Expense Tracker
+  <p>
+    <NavLink
+      activeClassName="nav__link--active"
+      ariaCurrent="true"
+      exact={true}
+      to="/"
+    >
+      Dashboard
+    </NavLink>
+     -
+    <NavLink
+      activeClassName="nav__link--active"
+      ariaCurrent="true"
+      to="/create"
+    >
+      Add Expense
+    </NavLink>
+     -
+    <NavLink
+      activeClassName="nav__link--active"
+      ariaCurrent="true"
+      to="/help"
+    >
+      Help
+    </NavLink>
+  </p>
+</div>
+`;
