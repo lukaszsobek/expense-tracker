@@ -2,6 +2,12 @@ import { expensesReducer } from "../"
 
 describe("expenseReducer handles",() => {
 
+    it("initialization", () => {
+        const state = []
+        const action = { type: "@@INIT" }
+        expect(expensesReducer(undefined,action)).toEqual([])       
+    })
+
     it("default action", () => {
         const state = []
         const action = {}

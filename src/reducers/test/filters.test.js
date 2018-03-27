@@ -1,6 +1,17 @@
+import moment from "moment"
 import { filtersReducer } from "../"
 
 describe("filtersReducer handles",() => {
+
+    it("initialization", () => {
+        const action = { type: "@@INIT" }
+        expect(filtersReducer(undefined,action)).toEqual({
+            "endDate": moment().endOf("month"),
+            "sortBy": "date",
+            "startDate": moment().startOf("month"),
+            "text": ""
+        })       
+    })
 
     it("default action", () => {
         const state = {}
