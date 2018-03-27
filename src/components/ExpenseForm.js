@@ -48,7 +48,6 @@ class ExpenseForm extends React.Component {
     }
 
     onDateChange = createdAt => {
-
         this.setState(() => ({ createdAt }))
     }
 

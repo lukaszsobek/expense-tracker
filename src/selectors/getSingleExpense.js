@@ -1,5 +1,5 @@
 const getSingleExpense = (expenses, id) => {
-    return expenses.filter(expense => expense.id === id)[0]
+    return expenses.find(expense => expense.id === id)
 }
 
 export default getSingleExpense
