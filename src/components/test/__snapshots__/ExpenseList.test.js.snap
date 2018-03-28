@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders ExpenseList renders with expenses 1`] = `
+<div>
+  <ExpenseListItem
+    id={1}
+    key="1"
+    test="test"
+  />
+  <ExpenseListItem
+    blue="green"
+    id={2}
+    key="2"
+  />
+  <ExpenseListItem
+    id={3}
+    isLast={true}
+    key="3"
+  />
+</div>
+`;
+
+exports[`Renders ExpenseList renders without expenses 1`] = `
+<div>
+  No expenses defined
+</div>
+`;
