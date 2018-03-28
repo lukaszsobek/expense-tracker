@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders NotFoundPage 1`] = `
+<div>
+  404 - go to the 
+  <Link
+    replace={false}
+    to="/"
+  >
+    main page
+  </Link>
+</div>
+`;
