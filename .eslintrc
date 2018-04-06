@@ -14,7 +14,9 @@
         "react/jsx-uses-vars": [2],
         "react/react-in-jsx-scope": 2
     },
-    "plugins": [ "react", "babel"
+    "plugins": [
+        "react",
+        "babel"
     ]
   }
   

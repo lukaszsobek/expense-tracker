@@ -1,4 +1,5 @@
 import addExpense from "./expenses/addExpense"
+import { addExpenseApp } from "./expenses/addExpense"
 import editExpense from "./expenses/editExpense"
 import removeExpense from "./expenses/removeExpense"
 
@@ -10,6 +11,7 @@ import sortBy from "./sort/sortBy"
 
 export {
     addExpense,
+    addExpenseApp,
     editExpense,
     removeExpense,
 

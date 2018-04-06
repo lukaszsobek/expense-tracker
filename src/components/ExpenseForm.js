@@ -4,8 +4,6 @@ import moment from "moment"
 import "react-dates/initialize"
 import { SingleDatePicker } from "react-dates"
 
-import { addExpense } from "../actions/expenses/addExpense"
-
 const ErrorMessage = ({ errorMessage }) => (
     errorMessage
         ? <div className="error-message">Missing description or amount</div>
