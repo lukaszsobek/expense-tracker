@@ -10,12 +10,14 @@ exports[`Expense form renders a component with data provided 1`] = `
   >
     <input
       autoFocus={true}
+      className="expense-form__description"
       onChange={[Function]}
       placeholder="Description..."
       type="test"
       value="testDesc"
     />
     <input
+      className="expense-form__amount"
       onChange={[Function]}
       pattern="[0-9]+([\\\\.,][0-9]+)?"
       placeholder="Amount..."
@@ -108,6 +110,7 @@ exports[`Expense form renders a component with data provided 1`] = `
       withPortal={false}
     />
     <textarea
+      className="expense-form__note"
       onChange={[Function]}
       placeholder="Add a note to your expense"
       value="testNote"
@@ -129,12 +132,14 @@ exports[`Expense form renders default component 1`] = `
   >
     <input
       autoFocus={true}
+      className="expense-form__description"
       onChange={[Function]}
       placeholder="Description..."
       type="test"
       value=""
     />
     <input
+      className="expense-form__amount"
       onChange={[Function]}
       pattern="[0-9]+([\\\\.,][0-9]+)?"
       placeholder="Amount..."
@@ -227,6 +232,7 @@ exports[`Expense form renders default component 1`] = `
       withPortal={false}
     />
     <textarea
+      className="expense-form__note"
       onChange={[Function]}
       placeholder="Add a note to your expense"
       value=""

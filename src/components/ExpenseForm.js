@@ -80,6 +80,7 @@ class ExpenseForm extends React.Component {
             <ErrorMessage errorMessage={this.state.errorState} />
             <form onSubmit={this.onSubmitForm}>
                 <input type="test" 
+                    className="expense-form__description"
                     placeholder="Description..."
                     value={this.state.description}
                     onChange={this.onDescriptionChange}
@@ -87,6 +88,7 @@ class ExpenseForm extends React.Component {
                     />
 
                 <input type="number" 
+                    className="expense-form__amount"
                     placeholder="Amount..."
                     pattern="[0-9]+([\.,][0-9]+)?"
                     value={this.state.amount}
@@ -104,6 +106,7 @@ class ExpenseForm extends React.Component {
 
                 <textarea
                     placeholder="Add a note to your expense"
+                    className="expense-form__note"
                     value={this.state.note}
                     onChange={this.onNoteChange}
                     ></textarea>
