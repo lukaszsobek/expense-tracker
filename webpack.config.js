@@ -1,7 +1,9 @@
 const path = require("path")
 const webpack = require("webpack")
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 process.env.NODE_ENV = process.env.NODE_ENV || "development"
+const CSSExtract = new ExtractTextPlugin("styles.css")
 
 if(process.env.NODE_ENV == "test") {
     require("dotenv").config({ path: ".env.test"})
@@ -24,15 +26,17 @@ module.exports = (env) => {
                 exclude: /node_modules/
             },{
                 test:/\.s?css$/,
-                use: [
-                    "style-loader",
-                    "css-loader",
-                    "sass-loader"
-                ]
+                use: CSSExtract.extract({
+                    use: [
+                        "css-loader",
+                        "sass-loader"
+                    ]
+                })
             }
         ]
         },
         plugins: [
+            CSSExtract,
             new webpack.DefinePlugin({
                 "process.env.FIREBASE_API_KEY": JSON.stringify("process.env.FIREBASE_API_KEY"),
                 "process.env.FIREBASE_AUTH_DOMAIN": JSON.stringify("process.env.FIREBASE_AUTH_DOMAIN"),
