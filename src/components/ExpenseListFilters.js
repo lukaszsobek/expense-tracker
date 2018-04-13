@@ -10,31 +10,32 @@ import {
     sortBy
 } from "../actions"
 
-class ExpenseListFilters extends React.Component {
+export class ExpenseListFilters extends React.Component {
     state = {
         calendarFocused: null
     }
 
     onDatesChange = ({ startDate, endDate }) => {
-        setStartDateFilter(startDate)
-        setEndDateFilter(endDate)
+        this.props.setStartDateFilter(startDate)
+        this.props.setEndDateFilter(endDate)
     }
 
     onFocusChange = calendarFocused => this.setState(() => ({ calendarFocused }))
+
+    onTextChange = e => this.props.setTextFilter(e.target.value)
+
+    onSortChange = e => this.props.sortBy(e.target.value)
     
     render() {
-        const { textFilter, sortBy, updateTextFilter, startDate, endDate } = this.props
+        const { endDate, startDate, textFilter } = this.props
         return (
             <div>
                 <input
                     type="text"
                     value={textFilter}
-                    onChange={(e) => {
-                        updateTextFilter(e.target.value)
-                        }
-                    }
+                    onChange={this.onTextChange}
                 />
-                <select onChange={(e) => sortBy(e.target.value)}>
+                <select onChange={this.onSortChange}>
                     <option value="date">Date</option>
                     <option value="amount">Amount</option>
                 </select>
@@ -51,7 +52,6 @@ class ExpenseListFilters extends React.Component {
                     isOutsideRange={() => false}
                     showClearDates={true}
                 />
-
             </div>
         )
     }
@@ -64,7 +64,7 @@ const mapStateToProps = ({ filters }) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    updateTextFilter: newValue => dispatch(setTextFilter(newValue)),
+    setTextFilter: newValue => dispatch(setTextFilter(newValue)),
     sortBy: value => dispatch(sortBy(value)),
     setStartDateFilter: startDate => dispatch(setStartDateFilter(startDate)),
     setEndDateFilter: endDate => dispatch(setEndDateFilter(endDate))
