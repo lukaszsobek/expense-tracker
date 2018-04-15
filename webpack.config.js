@@ -28,8 +28,18 @@ module.exports = (env) => {
                 test:/\.s?css$/,
                 use: CSSExtract.extract({
                     use: [
-                        "css-loader",
-                        "sass-loader"
+                        {
+                            loader: "css-loader",
+                            options: {
+                                sourceMaps: true
+                            }
+                        },
+                        {
+                            loader: "sass-loader",
+                            options: {
+                                sourceMaps: true
+                            }
+                        }
                     ]
                 })
             }
@@ -38,17 +48,17 @@ module.exports = (env) => {
         plugins: [
             CSSExtract,
             new webpack.DefinePlugin({
-                "process.env.FIREBASE_API_KEY": JSON.stringify("process.env.FIREBASE_API_KEY"),
-                "process.env.FIREBASE_AUTH_DOMAIN": JSON.stringify("process.env.FIREBASE_AUTH_DOMAIN"),
-                "process.env.FIREBASE_DATABASE_URL": JSON.stringify("process.env.FIREBASE_DATABASE_URL"),
-                "process.env.FIREBASE_PROJECT_ID": JSON.stringify("process.env.FIREBASE_PROJECT_ID"),
-                "process.env.FIREBASE_STORAGE_BUCKET": JSON.stringify("process.env.FIREBASE_STORAGE_BUCKET"),
-                "process.env.FIREBASE_MESSAGING_SENDER_ID": JSON.stringify("process.env.FIREBASE_MESSAGING_SENDER_ID")
+                "process.env.FIREBASE_API_KEY": JSON.stringify(process.env.FIREBASE_API_KEY),
+                "process.env.FIREBASE_AUTH_DOMAIN": JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
+                "process.env.FIREBASE_DATABASE_URL": JSON.stringify(process.env.FIREBASE_DATABASE_URL),
+                "process.env.FIREBASE_PROJECT_ID": JSON.stringify(process.env.FIREBASE_PROJECT_ID),
+                "process.env.FIREBASE_STORAGE_BUCKET": JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
+                "process.env.FIREBASE_MESSAGING_SENDER_ID": JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID)
             })
         ],
         devtool: isProduction
             ? "source-map"
-            : "cheap-module-eval-source-map",
+            : "inline-source-map",
         devServer: {
             contentBase: path.join(__dirname,"public"),
             historyApiFallback: true
