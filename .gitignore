@@ -3,7 +3,4 @@
 .env.development
 .env.test
 test.txt
-/public/bundle.js
-/public/bundle.js.map
-/public/styles.css
-/public/styles.css.map
+/public/dist/
