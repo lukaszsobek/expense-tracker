@@ -10,9 +10,9 @@ exports[`Renders ExpenseListItem 1`] = `
       2
     </Link>
     - 
-    4
+    $0.04
     - 
-    5
+    May 1st, 2001
   </div>
 </div>
 `;
