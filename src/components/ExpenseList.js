@@ -22,8 +22,8 @@ export const ExpenseList = ({ expenses }) => {
     )
 }
 
-const mapStateToProps = state => ({
-    expenses: getVisibleExpenses(state.expenses, state.filters)
+const mapStateToProps = ({ expenses, filters }) => ({
+    expenses: getVisibleExpenses(expenses, filters)
 })
 
 export default connect(mapStateToProps)(ExpenseList)
