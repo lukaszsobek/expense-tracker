@@ -26,38 +26,6 @@ import { getVisibleExpenses} from "./selectors"
 
 const store = configureStore()
 
-// store.subscribe(() => {
-//     const { expenses, filters } = store.getState()
-//     console.log(getVisibleExpenses(expenses, filters))
-// })
-
-const addedItem2 = store.dispatch(addExpense({
-    description: "lalala",
-    amount : 300,
-    createdAt: 400
-}))
-
-const addedItem = store.dispatch(addExpense({
-    description: "Hello",
-    amount : 100,
-    createdAt: 80
-}))
-
-// store.dispatch(removeExpense({
-//     id: addedItem.expense.id
-// }))
-// store.dispatch(editExpense(
-//     addedItem2.expense.id,
-//     { 
-//         amount: 500,
-//         description: "not-lalala"
-//      }
-// ))
-// store.dispatch(setStartDateFilter(125))
-// store.dispatch(setEndDateFilter(300))
-// store.dispatch(setStartDateFilter())
-// store.dispatch(setEndDateFilter())
-
 ReactDOM.render(
     <Provider store={store}>
         <AppRouter />
