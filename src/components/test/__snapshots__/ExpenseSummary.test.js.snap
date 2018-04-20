@@ -6,7 +6,7 @@ exports[`ExpenseSummary renders with 0 expenses 1`] = `
 >
   Viewing 
   0 expenses 
-  totalling 
+   totalling 
   $0.00
 </div>
 `;
@@ -17,7 +17,7 @@ exports[`ExpenseSummary renders with 1 expense 1`] = `
 >
   Viewing 
   1 expense 
-  totalling 
+   totalling 
   $0.10
 </div>
 `;
@@ -28,7 +28,7 @@ exports[`ExpenseSummary renders with 3 expenses 1`] = `
 >
   Viewing 
   3 expenses 
-  totalling 
+   totalling 
   $0.60
 </div>
 `;
