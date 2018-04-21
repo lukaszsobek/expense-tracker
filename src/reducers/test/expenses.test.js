@@ -41,9 +41,7 @@ describe("expenseReducer handles",() => {
         const state = [{id:1},{id:2}]
         const update = {id: 3, update: {test: "yep"}}
         const action = { type: "EDIT_EXPENSE", update }
-        expect(expensesReducer(state,action)).toEqual([
-            {"id": 1}, {"id": 2}
-        ])
+        expect(expensesReducer(state,action)).toEqual(state)
     })
 
     it("EDIT_EXPENSE when match", () => {
@@ -53,5 +51,12 @@ describe("expenseReducer handles",() => {
         expect(expensesReducer(state,action)).toEqual([
             {"id": 1}, {"id": 2, "test": "yep"}
         ])
+    })
+
+    it("SET_EXPENSES to state", () => {
+        const state = []
+        const newItems = [{id:3},{id:4}]
+        const action = { type: "SET_EXPENSES", expenses: newItems }
+        expect(expensesReducer(state,action)).toEqual(newItems)
     })
 })

@@ -16,8 +16,6 @@ import {
 	NotFoundPage
 } from "../components"
 
-
-
 const AppRouter = () => (
 	<BrowserRouter>
 		<div>

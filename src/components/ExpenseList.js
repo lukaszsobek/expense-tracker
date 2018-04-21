@@ -1,6 +1,8 @@
 import React from "react"
 import { connect } from "react-redux"
 
+import { expenses } from "../firebase"
+
 import ExpenseListItem from "./ExpenseListItem"
 import { getVisibleExpenses } from "../selectors"
 
