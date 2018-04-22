@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Store has correct initial state 1`] = `
+Object {
+  "expenses": Array [],
+  "filters": Object {
+    "endDate": "1970-01-31T22:59:59.999Z",
+    "sortBy": "date",
+    "startDate": "1969-12-31T23:00:00.000Z",
+    "text": "",
+  },
+}
+`;

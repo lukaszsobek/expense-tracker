@@ -5,13 +5,13 @@ describe("expenseReducer handles",() => {
     it("initialization", () => {
         const state = []
         const action = { type: "@@INIT" }
-        expect(expensesReducer(undefined,action)).toEqual([])       
+        expect(expensesReducer(undefined,action)).toEqual(state)       
     })
 
     it("default action", () => {
         const state = []
         const action = {}
-        expect(expensesReducer(state,action)).toEqual([])   
+        expect(expensesReducer(state,action)).toEqual(state)   
     })
 
     it("ADD_EXPENSE", () => {
