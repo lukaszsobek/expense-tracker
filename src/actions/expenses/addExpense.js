@@ -1,7 +1,6 @@
 import { expenses } from "../../firebase"
 import uuid from "uuid"
 
-
 export const addExpenseApp = (expense) => ({
     type: "ADD_EXPENSE",
     expense
@@ -9,7 +8,6 @@ export const addExpenseApp = (expense) => ({
 
 const addExpense = (expense = {}) => {
     return dispatch => {
-
         const {
             description = "",
             note = "",

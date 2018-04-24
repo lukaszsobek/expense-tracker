@@ -4,6 +4,8 @@ exports[`Renders ExpenseDashboardPage 1`] = `
 <div>
   <Connect(ExpenseSummary) />
   <Connect(ExpenseListFilters) />
-  <Connect(ExpenseList) />
+  <Connect(ExpenseList)
+    expenses={Array []}
+  />
 </div>
 `;
