@@ -1,11 +1,11 @@
-import { editExpense } from "../../"
+import { editExpenseApp } from "../../"
 
-describe("editExpense creates", () => {
+describe("editExpenseApp creates", () => {
     it("edit expense action", () => {
         const id = 1
         const update = "two"
 
-        expect(editExpense(id, update)).toEqual({
+        expect(editExpenseApp(id, update)).toEqual({
             "id": 1,
             "type": "EDIT_EXPENSE",
             "update": "two"
