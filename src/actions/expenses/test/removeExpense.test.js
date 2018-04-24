@@ -1,9 +1,9 @@
-import { removeExpense } from "../../"
+import { removeExpenseApp } from "../../"
 
 describe("removeExpense creates", () => {
-    it("remove expense action", () => {
+    it("removeExpenseApp action", () => {
         const props = {id: 5}
-        expect(removeExpense(props)).toEqual({
+        expect(removeExpenseApp(props)).toEqual({
             "id": 5,
             "type": "REMOVE_EXPENSE"
         })
