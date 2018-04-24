@@ -2,7 +2,7 @@ import { expenses } from "../../firebase"
 import uuid from "uuid"
 
 
-const addExpenseApp = (expense) => ({
+export const addExpenseApp = (expense) => ({
     type: "ADD_EXPENSE",
     expense
 })
@@ -33,5 +33,4 @@ const addExpense = (expense = {}) => {
     }
 }
 
-export { addExpenseApp }
 export default addExpense
