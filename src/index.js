@@ -36,7 +36,7 @@ ReactDOM.render(
 
 firebase.auth().onAuthStateChanged(user => {
     if(user) {
-        console.log("logged in")
+        console.log("logged in",user.displayName)
     } else {
         console.log("not logged in")
     }
