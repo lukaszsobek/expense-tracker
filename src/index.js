@@ -22,7 +22,8 @@ import {
     sortByDate
 } from "./actions"
 
-import { getVisibleExpenses} from "./selectors"
+import { firebase } from "./firebase"
+import { getVisibleExpenses } from "./selectors"
 
 const store = configureStore()
 
@@ -32,3 +33,11 @@ ReactDOM.render(
     </Provider>,
     document.querySelector("#container")
 )
+
+firebase.auth().onAuthStateChanged(user => {
+    if(user) {
+        console.log("logged in")
+    } else {
+        console.log("not logged in")
+    }
+})

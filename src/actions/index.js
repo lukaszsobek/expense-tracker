@@ -12,6 +12,8 @@ import setTextFilter from "./filters/setTextFilter"
 
 import sortBy from "./sort/sortBy"
 
+import startLogin from "./auth/auth"
+
 export {
     addExpense,
     addExpenseApp,
@@ -25,5 +27,7 @@ export {
     setStartDateFilter,
     setTextFilter,
 
-    sortBy
+    sortBy,
+
+    startLogin
 }
