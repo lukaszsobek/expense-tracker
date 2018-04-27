@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders header 1`] = `
+exports[`Header renders 1`] = `
 <div>
   Expense Tracker
   <p>
@@ -28,6 +28,9 @@ exports[`renders header 1`] = `
     >
       Help
     </NavLink>
+    <button>
+      Log out
+    </button>
   </p>
 </div>
 `;

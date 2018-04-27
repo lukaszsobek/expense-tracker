@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 
 import { startLogout } from "../actions"
 
-export const Header = () => (
+export const Header = ({ startLogout }) => (
     <div>
         Expense Tracker
         <p>

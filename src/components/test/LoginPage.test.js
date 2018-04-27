@@ -1,9 +1,20 @@
 import React from "react"
 import { shallow } from "enzyme"
 
-import { LoginPage } from "../"
+import { LoginPage } from "../LoginPage.js"
 
-test("LoginPage",() => {
-    const wrapper = shallow(<LoginPage />)
-    expect(wrapper).toMatchSnapshot()
+describe("LoginPage",() => {
+
+    it("renders",() => {
+        const wrapper = shallow(<LoginPage />)
+        expect(wrapper).toMatchSnapshot()
+    })
+
+    it("calls correct function on login",() => {
+        const startLoginSpy = jest.fn()
+        const wrapper = shallow(<LoginPage startLogin={startLoginSpy}/>)
+        wrapper.find("button").simulate("click")
+        expect(startLoginSpy).toBeCalled()
+    })
+
 })
