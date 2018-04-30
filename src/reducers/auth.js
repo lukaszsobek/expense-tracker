@@ -1,4 +1,4 @@
-const authInitialState = {}
+export const authInitialState = {}
 
 const authReducer = (state = authInitialState, action) => {
     switch(action.type) {
@@ -15,3 +15,5 @@ const authReducer = (state = authInitialState, action) => {
             return state
     }
 }
+
+export default authReducer
