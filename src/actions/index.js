@@ -12,8 +12,12 @@ import setTextFilter from "./filters/setTextFilter"
 
 import sortBy from "./sort/sortBy"
 
-import startLogin from "./auth/auth"
-import { startLogout } from "./auth/auth"
+import {
+    startLogin,
+    startLogout,
+    logIn,
+    logOut
+} from "./auth/auth"
 
 export {
     addExpense,
@@ -31,5 +35,7 @@ export {
     sortBy,
 
     startLogin,
-    startLogout
+    startLogout,
+    logIn,
+    logOut
 }

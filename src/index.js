@@ -6,38 +6,57 @@ import "normalize.css/normalize.css"
 import "./styles/styles.scss"
 import "react-dates/lib/css/_datepicker.css"
 
-import "./firebase"
-
-import AppRouter from "./routers/AppRouter"
+import { AppRouter, history } from "./routers"
 import configureStore from "./store"
+import { setExpenses } from "./actions"
+import { firebase, expenses } from "./firebase"
 
-import {
-    addExpense,
-    editExpense,
-    removeExpense,
-    setEndDateFilter,
-    setStartDateFilter,
-    setTextFilter,
-    sortByAmount,
-    sortByDate
-} from "./actions"
-
-import { firebase } from "./firebase"
-import { getVisibleExpenses } from "./selectors"
 
 const store = configureStore()
 
 ReactDOM.render(
-    <Provider store={store}>
-        <AppRouter />
-    </Provider>,
+    <div>Loading...</div>,
     document.querySelector("#container")
 )
 
+let hasRendered = false
+const renderApp = () => {
+
+    const jsx = (
+        <Provider store={store}>
+            <AppRouter />
+        </Provider>
+    )
+
+    if(!hasRendered) {
+        hasRendered = !!hasRendered
+        ReactDOM.render(jsx, document.querySelector("#container"))
+    }
+}
+
 firebase.auth().onAuthStateChanged(user => {
     if(user) {
-        console.log("logged in",user.displayName)
+        console.log(user.uid)
+        const expensesList = []
+
+        expenses.once("value").then(items => {
+            items.forEach(item => {
+                expensesList.push({
+                    id: item.key,
+                    ...item.val()
+                })
+            })
+        })
+        .then(() => setExpenses(expensesList))
+        .then(() => {
+            renderApp()
+            if(history.location.pathname === "/") {
+                history.push("/dashboard")
+            }
+        })
     } else {
-        console.log("not logged in")
+        renderApp()
+        history.push("/")
     }
 })
+

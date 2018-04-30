@@ -6,13 +6,18 @@ import {
 
 import thunk from "redux-thunk"
 
-import { expensesReducer, filtersReducer} from "../reducers"
+import {
+    expensesReducer,
+    filtersReducer,
+    authReducer
+} from "../reducers"
 
 export default () => {
     const store = createStore(
         combineReducers({
             expenses: expensesReducer,
-            filters: filtersReducer
+            filters: filtersReducer,
+            auth: authReducer
         }),
         applyMiddleware(thunk)
     )
