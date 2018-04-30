@@ -8,7 +8,7 @@ import "react-dates/lib/css/_datepicker.css"
 
 import { AppRouter, history } from "./routers"
 import configureStore from "./store"
-import { setExpenses } from "./actions"
+import { logIn, logOut, setExpenses } from "./actions"
 import { firebase, expenses } from "./firebase"
 
 
@@ -36,7 +36,7 @@ const renderApp = () => {
 
 firebase.auth().onAuthStateChanged(user => {
     if(user) {
-        console.log(user.uid)
+        store.dispatch(logIn(user.uid))
         const expensesList = []
 
         expenses.once("value").then(items => {
@@ -55,6 +55,7 @@ firebase.auth().onAuthStateChanged(user => {
             }
         })
     } else {
+        store.dispatch(logOut())
         renderApp()
         history.push("/")
     }
