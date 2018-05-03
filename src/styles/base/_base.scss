@@ -5,6 +5,7 @@ html {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: $m-size;
+    color: $black;
     background-color: #fff;
 }
 
@@ -15,4 +16,8 @@ button {
 button:disabled {
     cursor: default;
     opacity: .5;
+}
+
+.nav__link--active {
+    font-weight: bold;
 }

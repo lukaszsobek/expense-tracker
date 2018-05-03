@@ -1,0 +1,32 @@
+.login__imageBg {
+    background-image: url("/img/bg_login.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__contentBox {
+    text-align: center;
+    background: fade-out($white, 0.1);
+    padding: $l-size;
+    margin: auto;
+    max-width: 500px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px $black;
+}
+
+.login__title {
+    margin: 0 0 $m-size;
+}
+
+.login__button {
+    border-radius: 3px;
+    border: none;
+    background: $green;
+    color: $black;
+    padding: $xs-size;
+}
