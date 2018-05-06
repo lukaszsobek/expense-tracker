@@ -6,7 +6,7 @@ import { SingleDatePicker } from "react-dates"
 
 const ErrorMessage = ({ errorMessage }) => (
     errorMessage
-        ? <div className="error-message">Missing description or amount</div>
+        ? <div className="expense-form__error-message">Missing description or amount</div>
         : null
 )
 
@@ -76,11 +76,12 @@ class ExpenseForm extends React.Component {
 
   render() {
       return (
-        <div>
+        <div className="app-container">
+            <form className="expense-form" onSubmit={this.onSubmitForm}>
             <ErrorMessage errorMessage={this.state.errorState} />
-            <form onSubmit={this.onSubmitForm}>
+
                 <input type="test" 
-                    className="expense-form__description"
+                    className="expense-form__description text-input"
                     placeholder="Description..."
                     value={this.state.description}
                     onChange={this.onDescriptionChange}
@@ -88,7 +89,7 @@ class ExpenseForm extends React.Component {
                     />
 
                 <input type="number" 
-                    className="expense-form__amount"
+                    className="expense-form__amount text-input"
                     placeholder="Amount..."
                     pattern="[0-9]+([\.,][0-9]+)?"
                     value={this.state.amount}
@@ -106,16 +107,20 @@ class ExpenseForm extends React.Component {
 
                 <textarea
                     placeholder="Add a note to your expense"
-                    className="expense-form__note"
+                    className="expense-form__note textarea"
                     value={this.state.note}
                     onChange={this.onNoteChange}
                     ></textarea>
 
-                <button>{
-                    !!this.props.editedExpense
-                        ? "Edit expense"
-                        : "Add Expense"
-                }</button>
+                <div>
+                    <button
+                        className="expense-form__submit-button"
+                    >{
+                        !!this.props.editedExpense
+                            ? "Edit expense"
+                            : "Add Expense"
+                    }</button>
+                </div>
             </form>
         </div>
       )

@@ -13,7 +13,15 @@ export const ExpenseList = ({ expenses }) => {
     }
 
     return (
-        <div>
+        <div className="app-container">
+
+            <div className="expense-list">
+                <div className="expense-list__header">
+                    <div>Expense</div>
+                    <div>Amount</div>
+                </div>
+            </div>
+            
             {expenses.map(expense => (
                 <ExpenseListItem
                 key={expense.id}

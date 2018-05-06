@@ -1,3 +1,9 @@
 @import "./base/settings";
 @import "./base/base";
+
+@import "./components/body";
+@import "./components/expense-form";
+@import "./components/header";
+@import "./components/list-filters";
 @import "./components/loginPage";
+@import "./components/page-header";

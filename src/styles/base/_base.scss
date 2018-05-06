@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -9,6 +13,12 @@ body {
     background-color: #fff;
 }
 
+.app-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 $m-size;
+}
+
 button {
    cursor: pointer; 
 }
@@ -16,6 +26,30 @@ button {
 button:disabled {
     cursor: default;
     opacity: .5;
+}
+
+.button-link {
+    display: inline-block;
+    padding: $xs-size $s-size;
+    background: $red;
+    color: $white;
+    text-decoration: none;
+    font-size: $m-size;
+    margin-top: $s-size;
+}
+
+.text-input {
+    height: 50px;
+    padding: $xs-size;
+}
+
+.select-input {
+    @extend .text-input;
+}
+
+.textarea {
+    @extend .text-input;
+    height: 10rem;
 }
 
 .nav__link--active {

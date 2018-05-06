@@ -1,0 +1,32 @@
+.expense-form {
+    display: flex;
+    flex-direction: column;
+
+    > * {
+        margin-bottom: $s-size;
+    }
+}
+
+.expense-form__error-message {
+    margin-bottom: $l-size;
+    color: $red;
+    font-weight: bold;
+    border: 1px solid $red;
+    padding: $s-size;
+    border-radius: 3px;
+}
+
+.expense-form__submit-button {
+    border: 0;
+    padding: $s-size;
+    background: $green;
+    border-radius: 3px;
+}
+
+.expense-form__remove-button {
+    border: 0;
+    text-decoration: underline;
+    background: #fff;
+    font-size: $s-size;
+
+}

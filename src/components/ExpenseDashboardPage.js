@@ -19,7 +19,7 @@ export const ExpenseDashboardPage = ({ setExpenses }) => {
     }).then(() => setExpenses(expensesList))
 
     return(
-        <div>
+        <div className="app-body">
             <ExpenseSummary />
             <ExpenseListFilters />
             <ExpenseList expenses={expensesList} />

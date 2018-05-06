@@ -1,0 +1,27 @@
+.app-header {
+    padding: $m-size;
+    background-color: $black;
+    color: $white;
+}
+
+.app-header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-header a {
+    text-decoration: none;
+    color: $white;
+}
+
+.app-header__title {
+    font-size: $l-size;
+}
+
+.app-header__logout {
+    font-size: $m-size;
+    background: $black;
+    color: $white;
+    border: none;
+}
