@@ -17,17 +17,20 @@ export const ExpenseList = ({ expenses }) => {
 
             <div className="expense-list">
                 <div className="expense-list__header">
-                    <div>Expense</div>
-                    <div>Amount</div>
+                    <div className="expense-list__header--expense">Expense</div>
+                    <div className="expense-list__header--amount">Amount</div>
                 </div>
+
+                {expenses.map(expense => (
+                    <ExpenseListItem
+                    key={expense.id}
+                    {...expense}
+                    />
+                ))}
+
             </div>
-            
-            {expenses.map(expense => (
-                <ExpenseListItem
-                key={expense.id}
-                {...expense}
-                />
-            ))}
+
+
         </div>
     )
 }

@@ -15,7 +15,10 @@ import { firebase, expenses } from "./firebase"
 const store = configureStore()
 
 ReactDOM.render(
-    <div>Loading...</div>,
+    <div className="app-loading">
+    <div className="app-loading__spinner"></div>
+    Loading...
+    </div>,
     document.querySelector("#container")
 )
 

@@ -5,7 +5,7 @@
 $white: rgba(244, 241, 222, 1);
 $red: rgba(224, 122, 95, 1);
 $gray: rgba(61, 64, 91, 1);
-$pale:rgb(203, 206, 233); 
+$pale:rgb(225, 228, 255); 
 $black: rgb(29, 31, 44);
 $green: rgba(129, 178, 154, 1);
 $orange: rgba(242, 204, 143, 1);
@@ -17,3 +17,7 @@ $s-size: 1.2rem;
 $m-size: 1.6rem;
 $l-size: 2.4rem;
 $xl-size: 4.8rem;
+
+
+// breakpoint
+$breakpoint: 60rem;

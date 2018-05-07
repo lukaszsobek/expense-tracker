@@ -1,0 +1,21 @@
+.app-loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.app-loading__spinner {
+    border: 10px solid $pale;
+    border-top: 10px solid $red;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: $m-size;
+    animation: spin 3s infinite;
+
+}
+
+@keyframes spin { 100% { transform: rotate(360deg) }}

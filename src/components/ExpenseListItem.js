@@ -10,13 +10,27 @@ export const ExpenseListItem = ({
         const amountString = numeral(amount / 100).format("$0,0.00")
         
         return (
-            <div>
+            <Link
+                className="expense-list__item"
+                to={`/edit/${id}`}
+            >
+
                 <div>
-                <Link to={`/edit/${id}`}>{description}</Link>
-                    - {amountString}
-                    - {momentString}
+                    <span
+                        className="expense-list__item--desc"
+                    >{description}</span><br/>
+                    <span
+                        className="expense-list__item--time"
+                    >{momentString}</span>
                 </div>
-            </div>
+
+                <div>
+                    <span
+                        className="expense-list__item--amount"
+                    >{amountString}</span>
+                </div>
+                
+            </Link>
         )
 }
 
