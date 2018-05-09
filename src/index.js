@@ -10,15 +10,13 @@ import { AppRouter, history } from "./routers"
 import configureStore from "./store"
 import { logIn, logOut, setExpenses } from "./actions"
 import { firebase, expenses } from "./firebase"
+import { LoadingPage } from "./components"
 
 
 const store = configureStore()
 
 ReactDOM.render(
-    <div className="app-loading">
-    <div className="app-loading__spinner"></div>
-    Loading...
-    </div>,
+    <LoadingPage />,
     document.querySelector("#container")
 )
 

@@ -6,6 +6,7 @@ import ExpenseList from "./ExpenseList"
 import ExpenseListFilters from "./ExpenseListFilters"
 import ExpenseSummary from "./ExpenseSummary"
 import Header from "./Header"
+import LoadingPage from "./LoadingPage"
 import LoginPage from "./LoginPage"
 import NotFoundPage from "./NotFoundPage"
 
@@ -19,6 +20,7 @@ export {
     ExpenseListFilters,
     ExpenseSummary,
     Header,
+    LoadingPage,
     LoginPage,
     NotFoundPage
 }

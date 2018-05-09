@@ -1,22 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Renders ExpenseList renders with expenses 1`] = `
-<div>
-  <ExpenseListItem
-    id={1}
-    key="1"
-    test="test"
-  />
-  <ExpenseListItem
-    blue="green"
-    id={2}
-    key="2"
-  />
-  <ExpenseListItem
-    id={3}
-    isLast={true}
-    key="3"
-  />
+<div
+  className="app-container"
+>
+  <div
+    className="expense-list"
+  >
+    <div
+      className="expense-list__header"
+    >
+      <div
+        className="expense-list__header--expense"
+      >
+        Expense
+      </div>
+      <div
+        className="expense-list__header--amount"
+      >
+        Amount
+      </div>
+    </div>
+    <ExpenseListItem
+      id={1}
+      key="1"
+      test="test"
+    />
+    <ExpenseListItem
+      blue="green"
+      id={2}
+      key="2"
+    />
+    <ExpenseListItem
+      id={3}
+      isLast={true}
+      key="3"
+    />
+  </div>
 </div>
 `;
 

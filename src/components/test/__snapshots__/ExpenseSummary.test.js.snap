@@ -2,33 +2,84 @@
 
 exports[`ExpenseSummary renders with 0 expenses 1`] = `
 <div
-  className="expense-summary"
+  className="page-header"
 >
-  Viewing 
-  0 expenses 
-   totalling 
-  $0.00
+  <div
+    className="app-container"
+  >
+    Viewing 
+    <strong>
+      0 expenses 
+    </strong>
+    totalling 
+    <strong>
+      $0.00
+    </strong>
+    <div>
+      <Link
+        className="button-link"
+        replace={false}
+        to="/create"
+      >
+        Add
+      </Link>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`ExpenseSummary renders with 1 expense 1`] = `
 <div
-  className="expense-summary"
+  className="page-header"
 >
-  Viewing 
-  1 expense 
-   totalling 
-  $0.10
+  <div
+    className="app-container"
+  >
+    Viewing 
+    <strong>
+      1 expense 
+    </strong>
+    totalling 
+    <strong>
+      $0.10
+    </strong>
+    <div>
+      <Link
+        className="button-link"
+        replace={false}
+        to="/create"
+      >
+        Add
+      </Link>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`ExpenseSummary renders with 3 expenses 1`] = `
 <div
-  className="expense-summary"
+  className="page-header"
 >
-  Viewing 
-  3 expenses 
-   totalling 
-  $0.60
+  <div
+    className="app-container"
+  >
+    Viewing 
+    <strong>
+      3 expenses 
+    </strong>
+    totalling 
+    <strong>
+      $0.60
+    </strong>
+    <div>
+      <Link
+        className="button-link"
+        replace={false}
+        to="/create"
+      >
+        Add
+      </Link>
+    </div>
+  </div>
 </div>
 `;

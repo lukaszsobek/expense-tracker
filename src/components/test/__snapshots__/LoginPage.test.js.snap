@@ -1,7 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LoginPage renders 1`] = `
-<button>
-  Login
-</button>
+<div
+  className="login__imageBg"
+>
+  <div
+    className="login__contentBox"
+  >
+    <h1
+      className="login__title"
+    >
+      Expense Tracker
+    </h1>
+    <p
+      className="login__slogan"
+    >
+      Track your expenses with this app
+    </p>
+    <button
+      className="login__button"
+    >
+      Log in with Google
+    </button>
+  </div>
+</div>
 `;

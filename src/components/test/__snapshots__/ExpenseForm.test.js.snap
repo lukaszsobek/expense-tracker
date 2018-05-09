@@ -1,23 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Expense form renders a component with data provided 1`] = `
-<div>
-  <ErrorMessage
-    errorMessage={false}
-  />
+<div
+  className="app-container"
+>
   <form
+    className="expense-form"
     onSubmit={[Function]}
   >
+    <ErrorMessage
+      errorMessage={false}
+    />
     <input
       autoFocus={true}
-      className="expense-form__description"
+      className="expense-form__description text-input"
       onChange={[Function]}
       placeholder="Description..."
       type="test"
       value="testDesc"
     />
     <input
-      className="expense-form__amount"
+      className="expense-form__amount text-input"
       onChange={[Function]}
       pattern="[0-9]+([\\\\.,][0-9]+)?"
       placeholder="Amount..."
@@ -110,36 +113,43 @@ exports[`Expense form renders a component with data provided 1`] = `
       withPortal={false}
     />
     <textarea
-      className="expense-form__note"
+      className="expense-form__note textarea"
       onChange={[Function]}
       placeholder="Add a note to your expense"
       value="testNote"
     />
-    <button>
-      Edit expense
-    </button>
+    <div>
+      <button
+        className="expense-form__submit-button"
+      >
+        Edit expense
+      </button>
+    </div>
   </form>
 </div>
 `;
 
 exports[`Expense form renders default component 1`] = `
-<div>
-  <ErrorMessage
-    errorMessage={false}
-  />
+<div
+  className="app-container"
+>
   <form
+    className="expense-form"
     onSubmit={[Function]}
   >
+    <ErrorMessage
+      errorMessage={false}
+    />
     <input
       autoFocus={true}
-      className="expense-form__description"
+      className="expense-form__description text-input"
       onChange={[Function]}
       placeholder="Description..."
       type="test"
       value=""
     />
     <input
-      className="expense-form__amount"
+      className="expense-form__amount text-input"
       onChange={[Function]}
       pattern="[0-9]+([\\\\.,][0-9]+)?"
       placeholder="Amount..."
@@ -232,14 +242,18 @@ exports[`Expense form renders default component 1`] = `
       withPortal={false}
     />
     <textarea
-      className="expense-form__note"
+      className="expense-form__note textarea"
       onChange={[Function]}
       placeholder="Add a note to your expense"
       value=""
     />
-    <button>
-      Add Expense
-    </button>
+    <div>
+      <button
+        className="expense-form__submit-button"
+      >
+        Add Expense
+      </button>
+    </div>
   </form>
 </div>
 `;

@@ -1,36 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header renders 1`] = `
-<div>
-  Expense Tracker
-  <p>
-    <NavLink
-      activeClassName="nav__link--active"
-      ariaCurrent="true"
-      exact={true}
-      to="/"
+<header
+  className="app-header"
+>
+  <div
+    className="app-container app-header__container"
+  >
+    <Link
+      exact="true"
+      replace={false}
+      to="/dashboard"
     >
-      Dashboard
-    </NavLink>
-     -
-    <NavLink
-      activeClassName="nav__link--active"
-      ariaCurrent="true"
-      to="/create"
+      <h1
+        className="app-header__title"
+      >
+        Expense Tracker
+      </h1>
+    </Link>
+    <button
+      className="app-header__logout"
     >
-      Add Expense
-    </NavLink>
-     -
-    <NavLink
-      activeClassName="nav__link--active"
-      ariaCurrent="true"
-      to="/help"
-    >
-      Help
-    </NavLink>
-    <button>
       Log out
     </button>
-  </p>
-</div>
+  </div>
+</header>
 `;

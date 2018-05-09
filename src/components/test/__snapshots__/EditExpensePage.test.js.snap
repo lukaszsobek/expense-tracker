@@ -2,9 +2,15 @@
 
 exports[`EditExpensePage renders Component with data 1`] = `
 <div>
-  <h1>
-    Edit expense
-  </h1>
+  <div
+    className="page-header"
+  >
+    <div
+      className="app-container"
+    >
+      Edit Expense
+    </div>
+  </div>
   <ExpenseForm
     editedExpense={
       Object {
@@ -17,6 +23,7 @@ exports[`EditExpensePage renders Component with data 1`] = `
     onSubmit={[Function]}
   />
   <button
+    className="expense-form__remove-button"
     onClick={[Function]}
   >
     Remove

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders loading screen 1`] = `
+<div
+  className="app-loading"
+>
+  <div
+    className="app-loading__spinner"
+  />
+  Loading...
+</div>
+`;
