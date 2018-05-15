@@ -29,14 +29,16 @@ export class EditExpensePage extends React.Component {
                     </div>
                 </div>
 
-                <ExpenseForm
-                    editedExpense={editedExpense}
-                    onSubmit={this.onSubmit}
-                    />
-                <button
-                    className="expense-form__remove-button"
-                    onClick={this.onClick}
-                >Remove</button>
+                <div className="app-container">
+                    <ExpenseForm
+                        editedExpense={editedExpense}
+                        onSubmit={this.onSubmit}
+                        />
+                    <button
+                        className="expense-form__remove-button"
+                        onClick={this.onClick}
+                    >Remove</button>
+                </div>
             </div>
         )
     }
