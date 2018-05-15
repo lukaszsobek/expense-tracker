@@ -9,7 +9,7 @@ import "react-dates/lib/css/_datepicker.css"
 import { AppRouter, history } from "./routers"
 import configureStore from "./store"
 import { logIn, logOut, setExpenses } from "./actions"
-import { firebase, expenses } from "./firebase"
+import { firebase, database } from "./firebase"
 import { LoadingPage } from "./components"
 
 
@@ -38,17 +38,18 @@ const renderApp = () => {
 firebase.auth().onAuthStateChanged(user => {
     if(user) {
         store.dispatch(logIn(user.uid))
-        const expensesList = []
-
-        expenses.once("value").then(items => {
+        database
+        .ref(`users/${user.uid}/expenses`)
+        .once("value").then(items => {
+            const expensesList = []
             items.forEach(item => {
                 expensesList.push({
                     id: item.key,
                     ...item.val()
                 })
             })
+            store.dispatch(setExpenses(expensesList))
         })
-        .then(() => setExpenses(expensesList))
         .then(() => {
             renderApp()
             if(history.location.pathname === "/") {

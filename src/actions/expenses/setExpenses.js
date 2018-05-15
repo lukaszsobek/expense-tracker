@@ -1,6 +1,9 @@
-const setExpenses = expenses => ({
-    type: "SET_EXPENSES",
-    expenses
-})
+const setExpenses = expenses => {
+
+    return {
+        type: "SET_EXPENSES",
+        expenses
+    }
+}
 
 export default setExpenses

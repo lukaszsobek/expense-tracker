@@ -1,4 +1,4 @@
-import { expenses } from "../../firebase"
+import { database } from "../../firebase"
 
 export const editExpenseApp = (id, update) => ({
     type: "EDIT_EXPENSE",
@@ -7,8 +7,12 @@ export const editExpenseApp = (id, update) => ({
 })
 
 const editExpense = (id, update) => {
-    return dispatch => {
-        expenses.child(id).set(update)
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid
+        database
+        .ref(`users/${uid}/expenses`)
+        .child(id)
+        .set(update)
         .then(() => dispatch(editExpense(id, update)))
     }
 }

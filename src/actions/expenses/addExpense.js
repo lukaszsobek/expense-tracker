@@ -1,4 +1,4 @@
-import { expenses } from "../../firebase"
+import { database } from "../../firebase"
 import uuid from "uuid"
 
 export const addExpenseApp = (expense) => ({
@@ -7,7 +7,9 @@ export const addExpenseApp = (expense) => ({
 })
 
 const addExpense = (expense = {}) => {
-    return dispatch => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid
+        
         const {
             description = "",
             note = "",
@@ -22,7 +24,8 @@ const addExpense = (expense = {}) => {
             createdAt
         }
 
-        return expenses
+        return database
+            .ref(`users/${uid}/expenses`)
             .push(formattedExpense)
             .then((ref) => dispatch(addExpenseApp({
                 ...formattedExpense,

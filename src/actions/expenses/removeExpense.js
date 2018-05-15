@@ -1,4 +1,4 @@
-import { expenses } from "../../firebase"
+import { database } from "../../firebase"
 
 export const removeExpenseApp = ({ id } = {}) => ({
     type: "REMOVE_EXPENSE",
@@ -6,8 +6,12 @@ export const removeExpenseApp = ({ id } = {}) => ({
 })
 
 const removeExpense = ({ id } = {}) => {
-    return dispatch => {
-        expenses.child(id).remove()
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid
+        database
+        .ref(`users/${uid}/expenses`)
+        .child(id)
+        .remove()
         .then(() => dispatch(removeExpenseApp(id)))
     }
 }
