@@ -11,12 +11,9 @@ const expensesReducer = (state = expensesReducerInitialState, action) => {
             ]
 
         case "REMOVE_EXPENSE":
-            
-            const test = state.filter(
+            return state.filter(
               expense => expense.id != action.id
             )
-            console.log(test)
-            return test
 
         case "EDIT_EXPENSE":
             return state.map(expense => {

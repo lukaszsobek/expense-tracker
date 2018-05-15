@@ -24,7 +24,11 @@ describe("addExpense submits", () => {
     const createMockStore = configureMockStore([thunk])
 
     it("with default props",(done) => {
-        const store = createMockStore({})
+        const store = createMockStore({
+            auth: {
+                uid: "123"
+            }
+        })
         const props = {
             "amount": 0,
             "createdAt": 0,
@@ -49,7 +53,11 @@ describe("addExpense submits", () => {
 
 
     it("with custom props",(done) => {
-        const store = createMockStore({})
+        const store = createMockStore({
+            auth: {
+                uid: "123"
+            }
+        })
         const props = {
             "amount": 123,
             "createdAt": 456,
