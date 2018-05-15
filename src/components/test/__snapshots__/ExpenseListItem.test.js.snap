@@ -16,7 +16,7 @@ exports[`Renders ExpenseListItem 1`] = `
     <span
       className="expense-list__item--time"
     >
-      May 1st, 2001
+      Jan 1st, 1970
     </span>
   </div>
   <div>
