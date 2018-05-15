@@ -1,11 +1,6 @@
 import { database } from "../../firebase"
 import uuid from "uuid"
 
-export const addExpenseApp = (expense) => ({
-    type: "ADD_EXPENSE",
-    expense
-})
-
 const addExpense = (expense = {}) => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid
@@ -33,5 +28,10 @@ const addExpense = (expense = {}) => {
             })))
     }
 }
+
+export const addExpenseApp = (expense) => ({
+    type: "ADD_EXPENSE",
+    expense
+})
 
 export default addExpense

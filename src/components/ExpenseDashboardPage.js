@@ -5,30 +5,17 @@ import { expenses } from "../firebase"
 import { ExpenseList, ExpenseListFilters, ExpenseSummary } from "./"
 import { setExpenses } from "../actions"
 
-export const ExpenseDashboardPage = ({ setExpenses }) => {
-
-    const expensesList = []
-
-    expenses.once("value").then(items => {
-        items.forEach(item => {
-            expensesList.push({
-                id: item.key,
-                ...item.val()
-            })
-        })
-    }).then(() => setExpenses(expensesList))
+export const ExpenseDashboardPage = ({ expenses }) => {
 
     return(
         <div className="app-body">
             <ExpenseSummary />
             <ExpenseListFilters />
-            <ExpenseList expenses={expensesList} />
+            <ExpenseList expenses={expenses} />
         </div>
     )
 }
 
-const mapDispatchToProps = dispatch => ({
-    setExpenses: expenses => dispatch(setExpenses(expenses))
-})
+const mapStateToProps = ({ expenses }) => ({ expenses })
 
-export default connect(null, mapDispatchToProps)(ExpenseDashboardPage)
+export default connect(mapStateToProps)(ExpenseDashboardPage)
