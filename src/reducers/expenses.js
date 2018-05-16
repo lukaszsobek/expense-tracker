@@ -1,33 +1,40 @@
 import { expenses } from "../firebase"
+import { 
+    ADD_EXPENSE,
+    REMOVE_EXPENSE,
+    EDIT_EXPENSE,
+    SET_EXPENSES
+} from "../constants"
 
 const expensesReducerInitialState = []
 
 const expensesReducer = (state = expensesReducerInitialState, action) => {
     switch(action.type) {
-        case "ADD_EXPENSE":
+        case ADD_EXPENSE:
             return [
                 ...state,
                 action.expense
             ]
 
-        case "REMOVE_EXPENSE":
+        case REMOVE_EXPENSE:
             return state.filter(
               expense => expense.id != action.id
             )
 
-        case "EDIT_EXPENSE":
+        case EDIT_EXPENSE:
             return state.map(expense => {
                 if(expense.id !== action.id) {
                     return expense
                 }
                 
+                console.log(expense,action)
                 return {
                     ...expense,
                     ...action.update
                 }
             })
 
-        case "SET_EXPENSES":
+        case SET_EXPENSES:
             return [
                 ...action.expenses
             ]
