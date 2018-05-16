@@ -11,8 +11,12 @@ exports[`AddExpensePage renders component 1`] = `
       Add Expense
     </div>
   </div>
-  <ExpenseForm
-    onSubmit={[Function]}
-  />
+  <div
+    className="app-container"
+  >
+    <ExpenseForm
+      onSubmit={[Function]}
+    />
+  </div>
 </div>
 `;

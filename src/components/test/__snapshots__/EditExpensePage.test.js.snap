@@ -11,22 +11,26 @@ exports[`EditExpensePage renders Component with data 1`] = `
       Edit Expense
     </div>
   </div>
-  <ExpenseForm
-    editedExpense={
-      Object {
-        "amount": 200,
-        "createdAt": 0,
-        "description": "testDesc",
-        "note": "testNote",
-      }
-    }
-    onSubmit={[Function]}
-  />
-  <button
-    className="expense-form__remove-button"
-    onClick={[Function]}
+  <div
+    className="app-container"
   >
-    Remove
-  </button>
+    <ExpenseForm
+      editedExpense={
+        Object {
+          "amount": 200,
+          "createdAt": 0,
+          "description": "testDesc",
+          "note": "testNote",
+        }
+      }
+      onSubmit={[Function]}
+    />
+    <button
+      className="expense-form__remove-button"
+      onClick={[Function]}
+    >
+      Remove
+    </button>
+  </div>
 </div>
 `;
