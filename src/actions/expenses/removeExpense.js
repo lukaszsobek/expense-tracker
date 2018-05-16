@@ -2,6 +2,7 @@ import { database } from "../../firebase"
 
 const removeExpense = ({ id } = {}) => {
     return (dispatch, getState) => {
+        console.log(id)
         const uid = getState().auth.uid
         database
         .ref(`users/${uid}/expenses`)
@@ -11,7 +12,7 @@ const removeExpense = ({ id } = {}) => {
     }
 }
 
-export const removeExpenseApp = ({ id } = {}) => ({
+export const removeExpenseApp = id => ({
     type: "REMOVE_EXPENSE",
     id
 })
