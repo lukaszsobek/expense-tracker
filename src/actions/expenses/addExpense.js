@@ -4,7 +4,7 @@ import uuid from "uuid"
 const addExpense = (expense = {}) => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid
-        
+
         const {
             description = "",
             note = "",

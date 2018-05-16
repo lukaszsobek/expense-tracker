@@ -1,9 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 
-import { expenses } from "../firebase"
 import { ExpenseList, ExpenseListFilters, ExpenseSummary } from "./"
-import { setExpenses } from "../actions"
 
 export const ExpenseDashboardPage = ({ expenses }) => {
 

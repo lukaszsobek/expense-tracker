@@ -27,7 +27,6 @@ const expensesReducer = (state = expensesReducerInitialState, action) => {
                     return expense
                 }
                 
-                console.log(expense,action)
                 return {
                     ...expense,
                     ...action.update
