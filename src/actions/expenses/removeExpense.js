@@ -1,10 +1,5 @@
 import { database } from "../../firebase"
 
-export const removeExpenseApp = ({ id } = {}) => ({
-    type: "REMOVE_EXPENSE",
-    id
-})
-
 const removeExpense = ({ id } = {}) => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid
@@ -15,5 +10,10 @@ const removeExpense = ({ id } = {}) => {
         .then(() => dispatch(removeExpenseApp(id)))
     }
 }
+
+export const removeExpenseApp = ({ id } = {}) => ({
+    type: "REMOVE_EXPENSE",
+    id
+})
 
 export default removeExpense
